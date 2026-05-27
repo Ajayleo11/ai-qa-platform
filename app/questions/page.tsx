@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import type { Question } from "@prisma/client";
+
+type Question = Awaited<ReturnType<typeof prisma.question.findMany>>[number];
 
 export const dynamic = "force-dynamic";
 
