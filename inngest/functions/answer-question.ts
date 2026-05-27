@@ -36,7 +36,7 @@ export const answerQuestion = inngest.createFunction(
     ];
 
     if (question.images.length > 0) {
-      question.images.forEach((url) => {
+      question.images.forEach((url: string) => {
         content.push({
           type: "image_url",
           image_url: { url },
