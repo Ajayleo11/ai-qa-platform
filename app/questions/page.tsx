@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import type { Question } from "@prisma/client";
 
 export const dynamic = "force-dynamic";
 
@@ -35,7 +36,7 @@ export default async function QuestionsPage() {
           </p>
         ) : (
           <div className="questions-list">
-            {questions.map((q) => (
+            {questions.map((q: Question) => (
               <Link
                 href={`/questions/${q.id}`}
                 key={q.id}
@@ -48,7 +49,7 @@ export default async function QuestionsPage() {
 
                 {q.tags.length > 0 && (
                   <div className="tags-wrapper">
-                    {q.tags.map((tag) => (
+                    {q.tags.map((tag: string) => (
                       <span key={tag} className="tag">
                         {tag}
                       </span>
