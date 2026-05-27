@@ -36,7 +36,7 @@ export default async function QuestionPage({
 
             {question.tags.length > 0 && (
               <div className="tags-wrapper">
-                {question.tags.map((tag) => (
+                {question.tags.map((tag: string) => (
                   <span key={tag} className="tag">
                     {tag}
                   </span>
